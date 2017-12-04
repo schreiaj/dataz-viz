@@ -1,0 +1,73 @@
+.Field {
+  min-height: 100vh;
+  background-color: #eee;
+  display: grid;
+  grid-template-columns: 70% auto
+}
+
+.match {
+  opacity: 1;
+  fill: none;
+  stroke-width: .15px;
+  animation: pulse 1.4s ease alternate infinite
+
+}
+
+.match-echo {
+  opacity: .40;
+  fill: none;
+  stroke-width: .1px;
+  stroke-dasharray: .2px;
+}
+
+.red {
+  stroke: red;
+}
+
+.blue {
+  stroke: blue;
+}
+
+.match:hover {
+  opacity: 1;
+}
+
+.fieldView {
+  animation-duration: 2s;
+  animation-name: fieldRotate;
+  animation-iteration-count: 1;
+  /*transform: rotateX(70deg) rotateZ(30deg) translateX(50px);*/
+}
+
+.fieldView:active {
+  perspective: 1000px;
+}
+
+@keyframes pulse {
+  from {
+    stroke-width: .07px;
+  }
+  to {
+    stroke-width: .17px;
+  }
+}
+
+@keyframes fieldRotate {
+  from {
+    transform: rotateX(0deg);
+  }
+  to {
+    /*transform: rotateX(70deg) rotateZ(45deg);*/
+  }
+}
+
+.fieldView>rect {
+  fill:white;
+  stroke: grey;
+  stroke-width: .3px;
+
+}
+
+.hide {
+  display: none;
+}
